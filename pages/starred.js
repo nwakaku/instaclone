@@ -15,6 +15,8 @@ import axios from "axios";
 import { createClient } from "urql";
 import { Web3Storage } from "web3.storage";
 import { useRouter } from "next/router";
+import { AiFillHeart, AiOutlineHeart, AiFillStar } from "react-icons/ai";
+
 
 const MemesQuery = `
 query {
@@ -242,14 +244,14 @@ export default function Starred(props) {
             ) : (
               <div className="flex flex-col items-center justify-center space-y-5 ">
                 <div className="text-center font-bold text-lg ">
-                  You have No Starred Memes Go back to Create Memes
+                  You have No Starred Instaclone NFT Go back to Create Memes
                 </div>
                 <img src="/sad.png" className="w-1/6" />
                 <button
                   onClick={create}
                   className="no-underline bg-green-500 py-2 px-3 rounded-lg font-bold text-teal-50 hover:bg-orange-500 cursor-pointer "
                 >
-                  Create Meme
+                  Create InstaClone NFT
                 </button>
               </div>
             )}
@@ -260,7 +262,7 @@ export default function Starred(props) {
         return (
           <div className="flex flex-col ">
             <h3 className="text-center font-bold text-lg self-center">
-              YOUR STARRED NFTS ART(S)
+              YOUR STARRED INSTACLONE NFT ART(S)
             </h3>
 
             <div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4 px-5 py-2 ">
@@ -367,20 +369,12 @@ export default function Starred(props) {
                                   </button>
                                 ) : card.DidMemberStarMe == true ? (
                                   <>
-                                    <img
-                                      src="./filledStar.png"
-                                      alt="STAR"
-                                      className="w-5 h-5"
-                                    />
+                                    <AiFillStar/>
                                     {card.NumberOfStars}
                                   </>
                                 ) : (
                                   <>
-                                    <img
-                                      src="./strokeStar.png"
-                                      alt="STAR"
-                                      className="w-5 h-5"
-                                    />
+                                    <AiOutlineHeart/>
                                     {card.NumberOfStars}
                                   </>
                                 )}
@@ -397,7 +391,7 @@ export default function Starred(props) {
             <div className="flex items-center justify-center space-x-3 py-3 w-full ">
               <img src="/sad.png" className="w-[40px]" />
               <div className="px-5 text-center text-sm">
-                Thats all of your Starred Nft Art(s)
+                Thats all of your Starred Instaclone Nft Art(s)
               </div>
             </div>
           </div>

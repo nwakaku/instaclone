@@ -23,7 +23,7 @@ a:hover, a:active {
     grid-template-columns: 2fr 1fr;
     /* max-width: 60%; */
     justify-content: center;
-    padding: 0 15rem;
+    padding: 0 19rem;
     /* background-color: white; */
 }
 
@@ -90,6 +90,7 @@ a:hover, a:active {
 }
 .account-inner{
     display: flex;
+    flex-direction: column;
     max-width: 10rem;
     margin: 1rem;
 }
@@ -98,9 +99,42 @@ a:hover, a:active {
     display: flex;
     flex-direction: column;
     border: 1px solid gray;
-    padding: 4rem;
+    padding: 2rem;
     justify-content: center;
     align-items: center;
+    width: 20rem;
+    height: auto;
+}
+
+.instaclone-login div{
+    margin:  .7rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.instaclone-login div h2{
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.instaclone-login div input{
+    padding: .5rem 0;
+    border: none;
+    background-color: rgb(214, 214, 214);
+    display: flex;
+    justify-content: center;
+    border-radius: .5em;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+.instaclone-login div input:focus{
+    border: none;
+    /* background-color: black; */
 }
 
 .instaclone-pic{
@@ -109,6 +143,7 @@ a:hover, a:active {
     padding: 0 4rem;
     justify-content: center;
     align-items: center;
+    width: 20rem;
 }
 
 .footer-image{
@@ -131,4 +166,19 @@ a:hover, a:active {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+/* css for instagram landing */
+.insta-landing{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8rem;
+}
+
+@media only screen and (max-width: 320px) {
+    .image-tag{
+        display: none;
+    }
 }

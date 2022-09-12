@@ -12,7 +12,8 @@ import { MemeForestAddress, ApiUriv } from "../constant";
 import { useEffect, useState } from "react";
 import MEME from "../artifacts/contracts/Instaclone.sol/MemeForest.json";
 import { createClient } from "urql";
-import {instagram} from './assets/instagram.png'
+import {instagram} from './assets/instagram.png';
+import Footer from '../components/Footer'
 
 const MemberQuery = `
 query {
@@ -54,7 +55,9 @@ export default function Home(props) {
   useEffect(() => {
     PageLoad();
     checkIfAMember(props);
-  }, []);
+  }, [ ]);
+
+  const [loadNext, setLoadNext] = useState(false)
 
   const PageLoad = async () => {
     try {
@@ -105,9 +108,9 @@ export default function Home(props) {
   const renderButton = () => {
     if (!AMember) {
       return (
-        <div className="flex items-center w-full h-full  z-0">
-          <div className=" flex flex-col-reverse md:flex-row items-center md:justify-center w-full h-full px-10 ">
-            <div className="w-full flex items-center justify-center md:justify-around basis-2/5 md:ml-4  md:mt-0">
+        <div className="">
+          <div className="insta-landing">
+            <div className=" w-full image-tag">
               <img
                 src="https://25394076.fs1.hubspotusercontent-eu1.net/hub/25394076/hubfs/instadevice.png?width=600&height=450&name=instadevice.png"
                 className="w-full"
@@ -115,50 +118,51 @@ export default function Home(props) {
             </div>
             <div>
               <div className="instaclone-login ">
-                <div className="flex items-center text-3xl text-center text-black font-bold my-2">
-                  <span className="logo">InstaClone</span>
+                <div className="">
+                  <h2 className="logo">InstaClone</h2>
+                
                 </div>
-                <div className="text-sm text-gray-400 my-2 ">
+                <div className=" ">
                   Register to become a Member
                 </div>
-                <div className="pt-2 w-full my-2">
+                <div className="">
                   <input
-                    className="px-2 py-1 h-10 font-semibold text-sm w-full border rounded-xl "
+                    className=" "
                     placeholder="Enter your Name"
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
-                <div className="flex flex-col items-center  justify-center w-full my-2">
+                <div className="">
                   {loading ? (
-                    <button className="text-lg text-gray-50 flex items-center justify-center font-semibold w-full py-2 bg-white  rounded-xl ">
+                    <button className=" ">
                       <img
                         src="/loader.png"
                         alt="loading..."
-                        className="w-8 h-8 mt-2"
+                        className=""
                       />
                     </button>
                   ) : (
                     <button
-                      className="text-lg text-gray-50  font-semibold w-full py-2 bg-green-500 hover:bg-gray-50 hover:text-green-500 border hover:border-slate-100 rounded-xl"
+                      className=""
                       onClick={joinMembership}
                     >
                       Register
                     </button>
                   )}
 
-                  <span className="text-sm text-gray-400 pt-1">
+                  <p className="">
                     {" "}
                     ------------OR------------
-                  </span>
-                  <div className=" text-gray-50 text-xs pt-3 flex items-center justify-center">
-                    <ConnectButton />
+                  </p>
+                  <div className=" " onClick={() => setLoadNext(!loadNext)}>
+                    <ConnectButton chainStatus="none"  />
                   </div>
                 </div>
               </div>
-              <div className="instaclone-pic my-2">
+              <div className="instaclone-pic">
                 <p>Get The App</p>
                 <div className="footer-image ">
-                  <img className="w-full" src="https://www.kindpng.com/picc/m/790-7908713_download-from-app-store-icons-png-transparent-png.png" />
+                  <img className="" src="https://www.kindpng.com/picc/m/790-7908713_download-from-app-store-icons-png-transparent-png.png" />
                 </div>
               </div>
             </div>
@@ -183,18 +187,19 @@ export default function Home(props) {
                               <div className="account-inner">
                                 <img
                                   className="w-full rounded-full"
-                                  src="https://media-exp1.licdn.com/dms/image/C4D03AQFRtWy9qsNbNw/profile-displayphoto-shrink_800_800/0/1643435491540?e=2147483647&v=beta&t=BMkL1vBXx1W2mT_CtF3Ut0f-9mZjL69GiXMHAVsIEi8"
+                                  src="https://imgs.search.brave.com/ZMmr6JQ2gf6YBMFp4tfHzvjmvuNy-YRR0QIIKseo60w/rs:fit:1110:1069:1/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3lrb0FB/T1N3d2cxZ3R0NEMv/cy1sMTYwMC5wbmc"
                                 />
-                              </div>
-                              <div className="flex flex-col justify-between w-full basis-4/5 space-y-6 p-10 mr-4 ">
-                                <div className=" flex items-center justify-between   font-semibold hover:cursor-pointer ">
-                                  <div>
+                                <div>
                                     <h3>
                                       <span className="pb-2 pr-5 text-3xl  text-gray border-b border-white">
                                         {lists.Name}
                                       </span>
                                     </h3>
                                   </div>
+                              </div>
+                              <div className="flex flex-col justify-between w-full basis-4/5 space-y-6 p-10 mr-4 ">
+                                <div className=" flex items-center justify-between   font-semibold hover:cursor-pointer ">
+                                  
 
                                   <div className="text-sm ">
                                     <ConnectButton />
@@ -255,7 +260,11 @@ export default function Home(props) {
         <meta name="description" content="By Oleanji" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div>
       {renderButton()}
+      <Footer/>
+      
+      </div>
     </div>
   );
 }

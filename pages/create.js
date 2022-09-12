@@ -7,6 +7,9 @@ import MEME from "../artifacts/contracts/Instaclone.sol/MemeForest.json";
 import { createClient } from "urql";
 import { useRouter } from "next/router";
 import { Web3Storage } from "web3.storage";
+import Loader from "../components/loader";
+import Footer from "../components/Footer";
+
 
 const MemberQuery = `
 query {
@@ -196,15 +199,14 @@ export default function Create(props) {
       return (
         <div>
           {loadingpage ? (
-            <div className="flex flex-row items-center justify-center text-8xl ">
-              <img src="/loading.png" alt="loading..." />
+            <div className="flex flex-row items-center justify-center ">
+              <Loader/>
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center ">
               <div className="text-center font-bold text-lg ">
                 Go Back Home and Register before Uploading Memes
               </div>
-              <img src="/sad.png" className="w-1/6" />
               <button
                 onClick={gohome}
                 className="no-underline bg-green-500 py-2 px-3 rounded-lg font-bold text-teal-50 hover:bg-orange-500 cursor-pointer "
@@ -221,14 +223,13 @@ export default function Create(props) {
         <>
           {loadingpage ? (
             <div className="flex flex-row items-center justify-center">
-              <div className="text-center text-8xl">
-                <img src="/loading.png" alt="loading..." />
-              </div>
+              <Loader/>
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center  w-full">
-              <h3 className="text-center font-bold text-lg self-center">
-                CREATE YOUR NFT ART AND SHOW THE WORLD
+            <div className="flex flex-col items-center justify-center  ">
+              <div className="w-35 border-2 justify-center ">
+                <h3 className="text-center font-bold text-lg self-center">
+                CREATE YOUR INSTACLONE NFT ART AND SHOW THE WORLD
               </h3>
 
               <div className="flex flex-col md:flex-row items-center justify-center py-2 w-4/5 space-y-8 md:space-x-8">
@@ -238,9 +239,9 @@ export default function Create(props) {
 
                     <input
                       type="text"
-                      placeholder="Name Of Meme"
+                      placeholder="Name Of NFT"
                       onChange={(e) => setNameOfFile(e.target.value)}
-                      className="p-1 border-2 border-slate-500 mx-4 rounded-lg w-3/4 self-start text-sm "
+                      className="p-2 border-2 border-slate-500 mx-4 rounded-lg w-full self-start text-sm "
                     />
                   </div>
 
@@ -250,9 +251,9 @@ export default function Create(props) {
                     </div>
                     <input
                       type="text"
-                      placeholder="Describe your meme"
+                      placeholder="Describe your NFT"
                       onChange={(e) => setDescriptionOfFile(e.target.value)}
-                      className="p-1 border-2 border-slate-500 mx-4 rounded-lg w-3/4  self-start text-sm "
+                      className="p-2 border-2 border-slate-500 mx-4 rounded-lg w-full  self-start text-sm "
                     />
                   </div>
                 </div>
@@ -292,11 +293,7 @@ export default function Create(props) {
                   </div>
                   {loading ? (
                     <button className=" flex items-center justify-center text-center w-full border border-slate-600 border-hidden px-2 py-2 font-semibold text-gray-50 text-lg mt-4 mx-4 bg-green-500  rounded-lg space-x-3 ">
-                      <img
-                        src="/loader.png"
-                        alt="loading..."
-                        className="w-8 h-8 "
-                      />
+                      <p>Loading...</p>
                       <span>{numberOfLoading}</span>
                     </button>
                   ) : (
@@ -309,6 +306,8 @@ export default function Create(props) {
                   )}
                 </div>
               </div>
+              </div>
+              
             </div>
           )}
         </>
@@ -329,6 +328,7 @@ export default function Create(props) {
           <ConnectButton />
         </div>
         <div className="">{renderButton()}</div>
+        <Footer/>
       </div>
     </div>
   );

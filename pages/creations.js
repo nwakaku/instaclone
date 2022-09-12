@@ -18,6 +18,7 @@ import { Web3Storage } from "web3.storage";
 import Loader from "../components/loader";
 import {FiDownloadCloud} from 'react-icons/fi'
 import { AiFillHeart, AiOutlineHeart, AiFillStar } from "react-icons/ai";
+import Footer from "../components/Footer";
 
 const MemesQuery = `
 query {
@@ -213,9 +214,7 @@ export default function Feed(props) {
       return (
         <div className="flex flex-row items-center justify-center">
           {loadingpage ? (
-            <div className="text-center text-8xl">
-              <img src="/loading.png" alt="loading..." />
-            </div>
+            <Loader/>
           ) : (
             <>
               <img src="/sad.png" className="w-1/6" />
@@ -376,25 +375,7 @@ export default function Feed(props) {
                   );
                 })}
               </div>
-              <div className="flex flex-row items-center justify-center w-full py-4">
-                <img src="/sad.png" className="w-[40px]" />
-                <div className="px-5 text-center text-sm some-foot ">
-                  <ul>
-                    <li>About</li>
-                    <li>About</li>
-                    <li>About</li>
-                    <li>About</li>
-                    <li>About</li>
-                    <li>About</li>
-                    <li>About</li>
-                    <li>About</li>
-                  </ul>
-                  <div>
-                    <p>Polygon Hackathon</p>
-                    <p>© 2022 Instagram from Meta</p>
-                  </div>
-                </div>
-              </div>
+              <Footer/>
             </div>
           )}
         </>

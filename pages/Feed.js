@@ -386,8 +386,10 @@ export default function Feed(props) {
 
       <div className="main">
         <div className="layout">{renderButton()}</div>
-        <div className="flex flex-col items-end pt-3 px-2">
+        <div className="flex flex-col items-center pt-3 px-2">
+          <div className="py-4">
           <ConnectButton />
+          </div>
           <Footer/>
         </div>
       </div>
