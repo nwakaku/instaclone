@@ -269,7 +269,7 @@ export default function Home(props) {
 
 async function GetData() {
   const data = await client.query(MemberQuery).toPromise();
-  return data.data.members;
+  return data.data.memebers;
 }
 
 export async function getServerSideProps() {
