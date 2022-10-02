@@ -282,7 +282,7 @@ export default function Feed(props) {
                                 }
                               >
                                 {loadingStarId == card.Id && loadingStar ? (
-                                  <button className="bg-[#FFFF00] rounded-md flex items-center justify-around h-7 w-24">
+                                  <button className=" rounded-md flex items-center justify-around h-7 w-24">
                                     <h4>
                                       <BsHeart className="hover:text-[#FFFF00]" />
                                     </h4>
@@ -306,7 +306,7 @@ export default function Feed(props) {
                                 }
                               >
                                 {loadingLikeId == card.Id && loadingLike ? (
-                                  <button className="rounded-md border-none flex  items-center justify-around h-8 w-10 bg-[#FFFF00] ">
+                                  <button className="rounded-md border-none flex  items-center justify-around h-8 w-10 ">
                                     <h4>
                                       <AiFillStar className="hover:text-[#ff0000]" />
                                     </h4>

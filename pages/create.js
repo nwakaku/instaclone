@@ -301,7 +301,7 @@ export default function Create(props) {
                       onClick={() => Uploading(valueExtension)}
                       className="text-center w-full border border-slate-600 border-hidden px-2 py-2 font-semibold text-gray-50 text-sm mt-4 mx-4 bg-green-500 hover:text-green-500 hover:bg-white hover:border hover:border-slate-500 rounded-lg"
                     >
-                      Create Meme
+                      Create Post
                     </button>
                   )}
                 </div>

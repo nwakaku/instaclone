@@ -190,17 +190,15 @@ export default function Home(props) {
                                   src="https://imgs.search.brave.com/ZMmr6JQ2gf6YBMFp4tfHzvjmvuNy-YRR0QIIKseo60w/rs:fit:1110:1069:1/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3lrb0FB/T1N3d2cxZ3R0NEMv/cy1sMTYwMC5wbmc"
                                 />
                                 <div>
-                                    <h3>
-                                      <span className="pb-2 pr-5 text-3xl  text-gray border-b border-white">
-                                        {lists.Name}
-                                      </span>
-                                    </h3>
-                                  </div>
+                                  <h3>
+                                    <span className="pb-2 pr-5 text-3xl  text-gray border-b border-white">
+                                      {lists.Name}
+                                    </span>
+                                  </h3>
+                                </div>
                               </div>
                               <div className="flex flex-col justify-between w-full basis-4/5 space-y-6 p-10 mr-4 ">
                                 <div className=" flex items-center justify-between   font-semibold hover:cursor-pointer ">
-                                  
-
                                   <div className="text-sm ">
                                     <ConnectButton />
                                     <div className="py-2">
@@ -222,7 +220,7 @@ export default function Home(props) {
                             <div className="flex flex-col  items-center p-10  text-orange-500 hover:bg-gray-50 rounded-lg border-2 border-green-400">
                               <span className="font-medium ">
                                 {" "}
-                                Number Of Starred Memes
+                                Number Of Starred Posts
                               </span>
                               <span className="font-normal">
                                 {" "}
@@ -232,7 +230,7 @@ export default function Home(props) {
                             <div className="flex flex-col  items-center p-10  text-orange-500 hover:bg-gray-50 rounded-lg border-2 border-green-400">
                               <span className="font-medium">
                                 {" "}
-                                Number Of Total Memes
+                                Number Of Total Posts
                               </span>
                               <span className="font-normal">
                                 {" "}
